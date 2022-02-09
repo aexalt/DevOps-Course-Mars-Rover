@@ -3,6 +3,14 @@
 
 {% block content %}
   <h1 class="display-4">Image of the Day:</h1>
+  {% if media_type == "video" %}
+    <iframe width="560" height="315"
+    src="{{ landing_image }}" frameborder="0" 
+    allowfullscreen></iframe>  
 
-  <img src="{{ landing_image }}">
+    <p>"{{ explanation }}"</p>
+  {% else %}
+    <img width="560" height="315" src="{{ landing_image }}">
+    <p>"{{ explanation }}"</p>
+  {% endif %}
 {% endblock %}
